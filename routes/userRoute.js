@@ -9,8 +9,9 @@ router.post('/signup', (req, res) => {
     connection.query(query, [user.email], (err, results) => {
         if (!err) {
             if (results.length <= 0) {
-                query = "insert into users(name, contact, email, password, status, role) value(?,?,?,?, 'false', 'user')";
-                connection.query(query, [user.name, user.contact, user.email, user.password], (err, results) => {
+                //query = "insert into users(name, contact, email, password, status, role) value(?,?,?,?, 'false', 'user')";
+                connection.query("insert into users(name, contact, email, password, status, role) value(?,?,?,?, 'false', 'user')",
+                [user.name, user.contact, user.email, user.password], (err, results) => {
                     if (!err) {
                         return res.status(200).json({ message: "!Successfully registered!" });
                     } else {
