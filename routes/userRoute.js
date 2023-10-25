@@ -4,7 +4,13 @@ const router = express.Router();
 
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
+
+
 const dotenv = require('dotenv');
+
+const auth = require('../services/authentication');
+const checkRole = require('../services/checkRole');
+
 
 dotenv.config();
 
@@ -29,8 +35,9 @@ router.post('/signup', (req, res) => {
         } else {
             return res.status(500).json(err);
         }
-    });
-});
+    })
+})
+
 // Para iniciar sesión en la página
 router.post('/login', (req, res) => {
     const user = req.body;
@@ -51,9 +58,8 @@ router.post('/login', (req, res) => {
         } else {
             return res.status(500).json(err);
         }
-    });
-});
-
+    })
+})
 
 // Correo para recuperación de contraseña
 var transporter = nodemailer.createTransport({
@@ -62,7 +68,7 @@ var transporter = nodemailer.createTransport({
         user: process.env.EMAIL,
         pass: process.env.PASSWORD
     }
-});
+})
 
 // Para la recuperación de contraseña
 router.post('/recoverpassword', (req, res) => {
@@ -92,10 +98,11 @@ router.post('/recoverpassword', (req, res) => {
         } else {
             return res.status(500).json(err);
         }
-    });
-});
+    })
+})
 
-router.get('/get', (req, res) => {
+//Para ver todos los usuarios disponibles
+router.get('/get', auth.authenticateToken, checkRole.checkRole, (req, res) => {
     let query = "select id, name, email, contact, status from users where role='user'";
     connection.query(query, (err, results) => {
         if (!err) {
@@ -106,23 +113,26 @@ router.get('/get', (req, res) => {
     })
 })
 
-router.patch('/update', (req, res) => {
+//PARA VERIFICAR LA CUENTA
+router.patch('/update', auth.authenticateToken, checkRole.checkRole,(req, res) => {
     let user = req.body;
-    let query = "update user set status=? where id=?";
+    let query = "update users set status=? where id=?";
     connection.query(query, [user.status, user.id], (err, results) => {
         if (!err) {
             if (results.affectedRows == 0) {
                 return res.status(404).json({ message: "User ID does not exist." })
             }
-            return res.status(200).json({message: " User update successfully!"})
+            return res.status(200).json({ message: "User update successfully!" })
         } else {
             return res.status(500).json(err);
         }
     })
 })
 
-router.get('/checkToekn', (req, res)=>{
-    return res.status(200).json({ message: "True"})
+//Checkear un token
+router.get('/checkToken', auth.authenticateToken, (req, res) => {
+    return res.status(200).json({ message: "True" })
 })
+
 
 module.exports = router;
