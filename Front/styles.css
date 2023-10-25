@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 120px;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.crypto-logos {
+    width: 25px;
+    margin: 0 10px;
+    transition: opacity 0.3s ease;
+}
+
+.crypto-logos:hover {
+    opacity: 0.7;
+}
+
+.crypto-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#main-content {
+    background-color: #ffffff;
+    padding: 13.3px; /* 2/3 del valor original */
+    border-radius: 5.3px; /* 2/3 del valor original */
+    box-shadow: 0 2.7px 5.3px rgba(0, 0, 0, 0.1); /* 2/3 del valor original */
+    max-width: 866.7px; /* 2/3 del valor original */
+    margin: 0 auto;
+    align-items: center;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+.vinos-grid, .espumantes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(166.7px, 1fr)); /* 2/3 del valor mínimo */
+    align-content: center;
+    gap: 13.3px; /* 2/3 del valor original */
+    margin-top: 13.3px; /* 2/3 del valor original */
+    justify-items: center;
+}
+
+.vinos-card, .espumantes-card {
+    border: 0.67px solid #ddd; /* 2/3 del valor original */
+    border-radius: 5.3px; /* 2/3 del valor original */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vinos-card img, .espumantes-card img {
+    width: 100%; /* Mantenido, ya que depende de la tarjeta */
+    height: auto;
+    object-fit: contain; /* Mantenido */
+}
+
+.vinos-card h3, .espumantes-card h3 {
+    margin: 0;
+    padding: 8px 10.7px; /* 2/3 del valor original */
+    background-color: #333;
+    color: #fff;
+    font-size: 12px; /* 2/3 del valor original */
+}
+
+.vinos-card p, .espumantes-card p {
+    padding: 5.3px 10.7px; /* 2/3 del valor original */
+    font-size: 10.7px; /* 2/3 del valor original */
+    color: #555;
+}
+
+.vinos-card:hover, .espumantes-card:hover {
+    transform: translateY(-3.3px); /* 2/3 del valor original */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 2/3 del valor original */
+}
+
+@media (max-width: 48rem) { 
+    .vinos-card img, .espumantes-card img {
+        height: auto;
+    }
+}
+
+@media (max-width: 37.5rem) {
+    .vinos-card img, .espumantes-card img {
+        height: auto;
+    }
+}
+
+@media (max-width: 30rem) {
+    header {
+        flex-direction: column;
+    }
+    
+    .logo {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    .vinos-grid, .espumantes-grid {
+        grid-template-columns: 1fr; /* Solo una columna para dispositivos muy pequeños */
+    }
+}
