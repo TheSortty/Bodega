@@ -7,8 +7,10 @@ function authenticateToken(req, res, next){
     if(token == null)
         return res.sendStatus(401);
     jwt.verify(token, process.env.ACCESS_TOKEN, (err, response) =>{
-        if(err)
+        if(err){
+            console.log("Error al verificar el token", err);
             return res.sendStatus(403);
+        }
         res.locals = response;
         next()
     })
