@@ -1,15 +1,15 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #F1EFE7;
     margin: 0;
     padding: 0;
     transition: background-color 0.3s ease;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    background-color: #64001e;
+    color: #FEEDD7;
+    padding: 15px 0;
     text-align: center;
     position: relative;
     display: flex;
@@ -21,7 +21,7 @@ header {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 120px;
+    width: 125px; /* Disminuido para un mejor tamaño */
     transition: transform 0.4s ease;
 }
 
@@ -29,8 +29,25 @@ header {
     transform: scale(1.1);
 }
 
+/* Estilo para el enlace del logo para eliminar el subrayado y asegurarnos de que no cambie el color */
+.logo-link {
+    text-decoration: none; /* Remueve el subrayado */
+    color: inherit; /* Asegura que el color no cambie */
+}
+
+.logo-link:hover .logo {
+    transform: scale(1.1); /* Anima el logo al pasar el cursor sobre el enlace */
+}
+
+.animated-background {
+    background-image: url("Front/Images/Wineblock.png");
+    background-repeat: repeat; /* La imagen se repetirá por todas partes */
+    height: calc(100% - 120px); /* Ajustar según las alturas de header y footer */
+    animation: moveBackground 20s linear infinite; /* Animación para mover la imagen de fondo */
+}
+
 nav {
-    background-color: #444;
+    background-color: #83072D;
     display: flex;
     justify-content: center;
 }
@@ -57,19 +74,19 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #83072D;
+    color: #ddd;
     text-align: center;
-    padding: 10px 0;
+    padding: 7px 0;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .crypto-logos {
-    width: 25px;
+    width: 40px;
     margin: 0 10px;
     transition: opacity 0.3s ease;
 }
@@ -85,12 +102,12 @@ footer {
 }
 
 #main-content {
-    background-color: #ffffff;
-    padding: 13.3px; /* 2/3 del valor original */
-    border-radius: 5.3px; /* 2/3 del valor original */
-    box-shadow: 0 2.7px 5.3px rgba(0, 0, 0, 0.1); /* 2/3 del valor original */
-    max-width: 866.7px; /* 2/3 del valor original */
-    margin: 0 auto;
+    background-color: #fcfaf3;
+    padding: 13.3px;
+    border-radius: 5.3px;
+    box-shadow: 0 2.7px 5.3px rgba(0, 0, 0, 0.1);
+    max-width: 866.7px;
+    margin: 20px auto; /* Añadido margen */
     align-items: center;
     display: grid;
     justify-content: center;
@@ -99,46 +116,61 @@ footer {
 
 .vinos-grid, .espumantes-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(166.7px, 1fr)); /* 2/3 del valor mínimo */
+    grid-template-columns: repeat(3, minmax(166.7px, 1fr));
     align-content: center;
-    gap: 13.3px; /* 2/3 del valor original */
-    margin-top: 13.3px; /* 2/3 del valor original */
+    gap: 13.3px;
+    margin-top: 13.3px;
     justify-items: center;
 }
 
 .vinos-card, .espumantes-card {
-    border: 0.67px solid #ddd; /* 2/3 del valor original */
-    border-radius: 5.3px; /* 2/3 del valor original */
+    border: 0.67px solid #ddd;
+    border-radius: 5.3px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .vinos-card img, .espumantes-card img {
-    width: 100%; /* Mantenido, ya que depende de la tarjeta */
+    width: 100%;
     height: auto;
-    object-fit: contain; /* Mantenido */
+    object-fit: contain;
 }
 
 .vinos-card h3, .espumantes-card h3 {
     margin: 0;
-    padding: 8px 10.7px; /* 2/3 del valor original */
+    padding: 8px 10.7px;
     background-color: #333;
     color: #fff;
-    font-size: 12px; /* 2/3 del valor original */
+    font-size: 12px;
 }
 
 .vinos-card p, .espumantes-card p {
-    padding: 5.3px 10.7px; /* 2/3 del valor original */
-    font-size: 10.7px; /* 2/3 del valor original */
+    padding: 5.3px 10.7px;
+    font-size: 10.7px;
     color: #555;
 }
 
-.vinos-card:hover, .espumantes-card:hover {
-    transform: translateY(-3.3px); /* 2/3 del valor original */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 2/3 del valor original */
+.vinos-card a, .espumantes-card a {
+    text-decoration: none;
+    color: inherit; /* Para mantener el color original del texto */
 }
 
-@media (max-width: 48rem) { 
+.vinos-card:hover, .espumantes-card:hover {
+    transform: translateY(-3.3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+#social-media img {
+    width: 2%; /* Esto reduce el tamaño de las imágenes al 10% de su tamaño original */
+    transition: transform 0.4s ease; /* Esto añade una transición suave al hacer hover */
+}
+
+#social-media img:hover {
+    transform: scale(1.1); /* Esto hace que las imágenes se agranden un poco al hacer hover */
+}
+
+@media (max-width: 48rem) {
     .vinos-card img, .espumantes-card img {
         height: auto;
     }
@@ -154,13 +186,22 @@ footer {
     header {
         flex-direction: column;
     }
-    
+
     .logo {
         position: static;
         margin-bottom: 10px;
     }
 
     .vinos-grid, .espumantes-grid {
-        grid-template-columns: 1fr; /* Solo una columna para dispositivos muy pequeños */
+        grid-template-columns: 1fr;
+    }
+
+    @keyframes moveBackground {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 100px 100px; /* Puedes ajustar estos valores según lo rápido y cuánto quieres que se mueva la imagen */
+        }
     }
 }
