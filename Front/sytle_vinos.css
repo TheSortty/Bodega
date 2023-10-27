@@ -1,0 +1,185 @@
+/* Estilos para el encabezado */
+header {
+    background-color: #64001e;
+    color: #FEEDD7;
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 125px;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo para el enlace del logo para eliminar el subrayado y asegurarnos de que no cambie el color */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-link:hover .logo {
+    transform: scale(1.1);
+}
+
+/* Estilos para la galería de fotos */
+.photo-gallery {
+    color: #313437;
+    background-color: #fff;
+}
+
+.photo-gallery p {
+    color: #7d8285;
+}
+
+.photo-gallery h2 {
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    color: inherit;
+}
+
+.photo-gallery .item {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    min-height: 450px;  /* Esto asegura que todas las cajas tengan al menos esta altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.photo-gallery .item img {
+    width: 250px; /* Ancho fijo para todas las imágenes */
+    height: 350px; /* Alto fijo para todas las imágenes */
+    object-fit: cover; /* Esto asegura que la imagen cubra el espacio definido sin deformarse */
+    margin: 0 auto;
+
+}
+
+.photo-gallery .item h2,
+.photo-gallery .item p,
+.photo-gallery .item h4,
+.photo-gallery .item h6 {
+    text-align: center;
+    color: #333;
+}
+
+.photo-gallery .item h2 {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.photo-gallery .item p {
+    font-size: 16px;
+}
+
+.photo-gallery .item h4 {
+    font-size: 18px;
+}
+
+.photo-gallery .item h6 {
+    font-size: 14px;
+    color: #777;
+    
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #83072D;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #83072D;
+    color: #ddd;
+    text-align: center;
+    padding: 7px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.crypto-logos {
+    width: 40px;
+    margin: 0 10px;
+    transition: opacity 0.3s ease;
+}
+
+.crypto-logos:hover {
+    opacity: 0.7;
+}
+
+.crypto-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width:767px) {
+    .photo-gallery h2 {
+        margin-bottom: 25px;
+        padding-top: 25px;
+        font-size: 24px;
+    }
+}
+
+.photo-gallery .intro {
+    font-size: 16px;
+    max-width: 6000px;
+    margin: 10 auto 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-gallery .intro p {
+    margin-bottom: 10;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-gallery .photos {
+    padding-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}

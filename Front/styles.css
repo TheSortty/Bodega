@@ -1,5 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family:'Trebuchet MS';
+    font-weight: 100;
     background-color: #F1EFE7;
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@ body {
 }
 
 header {
+    font-family: monospace;
     background-color: #64001e;
     color: #FEEDD7;
     padding: 15px 0;
@@ -15,6 +17,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: x-large;
 }
 
 .logo {
