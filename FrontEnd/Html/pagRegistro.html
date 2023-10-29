@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wineblock</title>
+    <link rel="stylesheet" href="../Css/styles.css">
+    <link rel="stylesheet" href="../Css/pagRegistro.css">
+</head>
+<body>
+    <header>
+        <h1>Wineblock</h1>
+        <a href="../Html/index.html" class="logo-link"> <!-- Añadida la etiqueta de anclaje alrededor del logo -->
+        <img src="../Images/logo_wineblock.png" alt="Logo de Wineblock" class="logo">
+        </a>
+    </header>
+    
+    <div class="animated-background">
+        <div class="encabezado-registro">
+            <nav>
+                <ul>
+                    <li><a href="../Html/index.html">Inicio</a></li>
+                    <li><a href="../Html/reservas.html">Reservas</a></li>
+                    <li><a href="../Html/contacto.html">Contacto</a></li>
+                <ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="containerReg">
+        <form id="signupForm" class="Formulario">
+            <h2 class="titulo">REGISTRARSE</h2>
+            <div class="cargaItems">
+                <div class="nombre">
+                    <label for="name">Nombre completo</label>
+                    <input type="text" id="name">
+                </div>
+                <div class="correo">
+                    <label for="email">Email</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="celular">
+                    <label for="contact">Telefono</label>
+                    <input type="tel" id="contact">
+                </div>
+                <div class="clave">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password">
+                </div>
+                <div class="botonIngreso">
+                    <input class="botIng" type="submit" value="Registrar">
+                </div>
+            </div>
+        </form>
+        
+        <script src="../../routes/userRoute.js"></script>
+        
+        <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            // Evita la recarga de la página
+            event.preventDefault();
+        
+            // Obtiene los valores del formulario
+            var name = document.getElementById('name').value;
+            var contact = document.getElementById('contact').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+        
+            // Crea el objeto usuario
+            var user = {
+                name: name,
+                contact: contact,
+                email: email,
+                password: password
+            };
+        
+            // Envía una solicitud POST a tu servidor
+            fetch('/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        });
+        </script>
+    </div>
+    
+    <footer>
+        <p>Aceptamos pagos en criptomonedas</p>
+        <div class="crypto-container">
+            <img src="../Images/bitcoin-btc-logo.png" alt="Logo Bitcoin" class="crypto-logos">
+            <img src="../Images/ethereum-eth-logo.png" alt="Logo Ethereum" class="crypto-logos">
+            <img src="../Images/tether-usdt-logo.png" alt="Logo USDT" class="crypto-logos">
+            <img src="../Images/bnb-bnb-logo.png" alt="Logo Binance Coin" class="crypto-logos">
+        </div>
+        <div class="Razon-social">
+            <p>Wineblock Ⓡ 2023. Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>    
+</html>
+

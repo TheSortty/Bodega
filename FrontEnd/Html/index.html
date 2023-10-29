@@ -5,23 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wineblock</title>
     <link rel="stylesheet" href="../Css/styles.css">
+    <link rel="stylesheet" href="../Css/popUpBoton.css">
 </head>
-<body>
+<body> 
     <header>
         <h1>Wineblock</h1>
         <a href="../Html/index.html" class="logo-link"> <!-- Añadida la etiqueta de anclaje alrededor del logo -->
         <img src="../Images/logo_wineblock.png" alt="Logo de Wineblock" class="logo">
         </a>
     </header>
-    
     <div class="animated-background">
-        <nav>
-            <ul>
-                <li><a href="../Html/index.html">Inicio</a></li>
-                <li><a href="../Html/reservas.html">Reservas</a></li>
-                <li><a href="../Html/contacto.html">Contacto</a></li>
+        <div class="encabezado-registro">
+            <nav>
                 <ul>
-        </nav>
+                    <li><a href="../Html/index.html">Inicio</a></li>
+                    <li><a href="../Html/reservas.html">Reservas</a></li>
+                    <li><a href="../Html/contacto.html">Contacto</a></li>
+                <ul>
+            </nav>
+            <div class="boton" >
+                <button id="show-login">Ingresar</button>
+            </div>
+        </div>
+        <div class="popup">
+            <div class="close-btn">&times;</div>
+            <div class="form">
+                <h2>Bienvenido</h2>
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="Enter email">                  
+                </div>
+                <div class="form-element">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Enter password">
+                </div>
+                <div class="form-element">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Recuerdame</label>
+                </div>
+                <div class="form-element">
+                    <button>Ingresar</button>
+                </div>
+                <div class="form-element">
+                    <a href="../Html/pagRegistro.html">No eres usuario, registrate</a>
+                </div>
+            </div>
+            <script src="../../services/popUpBoton.js"></script>
+        </div>
         
         <section id="main-content">
             <h2>Nuestros Vinos</h2>
