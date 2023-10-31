@@ -12,7 +12,7 @@ create table users(
 insert into users(name, contact, email, password, status, role)
 value('TheSortty', '+5492612407277', 'gonzalo.murguia@outlook.es', 'Admin123', 'true', 'admin')
 
-create table CategoryEspumante(
+create table CategorySparklingWines(
     idTipo_espumante int not null AUTO_INCREMENT,
     Tipo varchar(250) not null,
     primary key(id)

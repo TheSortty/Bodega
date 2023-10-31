@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,15 @@
     <link rel="stylesheet" href="../Css/styles.css">
     <link rel="stylesheet" href="../Css/pagRegistro.css">
 </head>
+
 <body>
     <header>
         <h1>Wineblock</h1>
         <a href="../Html/index.html" class="logo-link"> <!-- Añadida la etiqueta de anclaje alrededor del logo -->
-        <img src="../Images/logo_wineblock.png" alt="Logo de Wineblock" class="logo">
+            <img src="../Images/logo_wineblock.png" alt="Logo de Wineblock" class="logo">
         </a>
     </header>
-    
+
     <div class="animated-background">
         <div class="encabezado-registro">
             <nav>
@@ -22,7 +24,7 @@
                     <li><a href="../Html/index.html">Inicio</a></li>
                     <li><a href="../Html/reservas.html">Reservas</a></li>
                     <li><a href="../Html/contacto.html">Contacto</a></li>
-                <ul>
+                    <ul>
             </nav>
         </div>
     </div>
@@ -52,43 +54,42 @@
                 </div>
             </div>
         </form>
-        
-        <script src="../../routes/userRoute.js"></script>
-        
-        <script>
-        document.getElementById('signupForm').addEventListener('submit', function(event) {
-            // Evita la recarga de la página
-            event.preventDefault();
-        
-            // Obtiene los valores del formulario
-            var name = document.getElementById('name').value;
-            var contact = document.getElementById('contact').value;
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
-        
-            // Crea el objeto usuario
-            var user = {
-                name: name,
-                contact: contact,
-                email: email,
-                password: password
-            };
-        
-            // Envía una solicitud POST a tu servidor
-            fetch('/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(user)
-            })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Error:', error));
-        });
+
+        <script src="../../routes/userRoute.js">
+            document.getElementById('signupForm').addEventListener('submit', function (event) {
+                // Evita la recarga de la página
+                event.preventDefault();
+
+                // Obtiene los valores del formulario
+                var name = document.getElementById('name').value;
+                var contact = document.getElementById('contact').value;
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+
+                // Crea el objeto usuario
+                var user = {
+                    name: name,
+                    contact: contact,
+                    email: email,
+                    password: password
+                };
+
+                // Envía una solicitud POST a tu servidor
+                fetch('/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(response => response.json())
+                    .then(data => console.log(data))
+                    .catch(error => console.error('Error:', error));
+            });
         </script>
+
     </div>
-    
+
     <footer>
         <p>Aceptamos pagos en criptomonedas</p>
         <div class="crypto-container">
@@ -101,6 +102,6 @@
             <p>Wineblock Ⓡ 2023. Todos los derechos reservados</p>
         </div>
     </footer>
-</body>    
-</html>
+</body>
 
+</html>
