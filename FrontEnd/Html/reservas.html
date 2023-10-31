@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wineblock - Reservas</title>
+    <title>Wineblock</title>
     <link rel="stylesheet" href="../Css/styles.css">
+    <link rel="stylesheet" href="../Css/pagRegistro.css">
 </head>
 <body>
     <header>
@@ -14,35 +15,49 @@
         </a>
     </header>
     
-    <nav>
-        <ul>
-            <li><a href="../Html/index.html">Inicio</a></li>
-            <li><a href="../Html/reservas.html">Reservas</a></li>
-            <li><a href="../Html/contacto.html">Contacto</a></li>
-    </nav>
-
-    <section>
-        <div>
-            <h2>Formulario de Reserva</h2>
-            
-            <form action="/submit-reservation" method="post">
-                <label for="nombre">Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre"><br>
-                
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br>
-        
-                <label for="fecha">Fecha de visita:</label><br>
-                <input type="date" id="fecha" name="fecha"><br>
-        
-                <label for="personas">Número de personas:</label><br>
-                <input type="number" id="personas" name="personas"><br>
-        
-                <input type="submit" value="Reservar">
-            </form>
+    <div class="animated-background">
+        <div class="encabezado-registro">
+            <nav>
+                <ul>
+                    <li><a href="../Html/index.html">Inicio</a></li>
+                    <li><a href="../Html/reservas.html">Reservas</a></li>
+                    <li><a href="../Html/contacto.html">Contacto</a></li>
+                <ul>
+            </nav>
         </div>
-    </section>
+    </div>
 
+    <div class="containerReg">
+        <form id="signupForm" class="Formulario">
+            <h2 class="titulo">Pedi Tu Reserva</h2>
+
+            <div class="cargaItems">
+                <div class="nombre">
+                    <label for="name">Nombre completo</label>
+                    <input type="text" id="name">
+                </div>
+                <div class="correo">
+                    <label for="email">Email</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="nombre">
+                    <label for="fechaVisita">Fecha de Visita</label>
+                    <br>
+                    <input type="date" id="fechaVisita">
+                </div>
+                <div class="nombre">
+                    <label for="personas">Número de personas</label>
+                    <br>
+                    <input type="text" id="personas">
+                </div>
+                <div class="botonIngreso">
+                    <input class="botIng" type="submit" value="Reservar">
+                </div>
+            </div>
+        </form>
+        
+    </div>
+    
     <footer>
         <p>Aceptamos pagos en criptomonedas</p>
         <div class="crypto-container">
@@ -55,5 +70,5 @@
             <p>Wineblock Ⓡ 2023. Todos los derechos reservados</p>
         </div>
     </footer>
-</body>
+</body>    
 </html>
