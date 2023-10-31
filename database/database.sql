@@ -9,21 +9,6 @@ create table users(
     UNIQUE(email)
 )
 
-insert into users(name, contact, email, password, status, role)
-value('TheSortty', '+5492612407277', 'gonzalo.murguia@outlook.es', 'Admin123', 'true', 'admin')
-
-create table CategorySparklingWines(
-    idTipo_espumante int not null AUTO_INCREMENT,
-    Tipo varchar(250) not null,
-    primary key(id)
-)
-
-create table CategoryWines(
-    idTipo_vino int not null AUTO_INCREMENT,
-    Tipo varchar(250) not null,
-    primary key(id)
-)
-
 create table product (
     id int NOT NULL AUTO_INCREMENT,
     name varchar(255) NOT NULL,
@@ -33,3 +18,19 @@ create table product (
     status varchar(20),
     primary key(id)
 )
+
+
+create table CategoryEspumante(
+    id int NOT NULL AUTO_INCREMENT,
+    Tipo varchar(250) not null,
+    primary key(id)
+)
+
+create table CategoryWines(
+    id int NOT NULL AUTO_INCREMENT,
+    Tipo varchar(250) not null,
+    primary key(id)
+)
+
+insert into users(name, contact, email, password, status, role)
+value('TheSortty', '+5492612407277', 'gonzalo.murguia@outlook.es', 'Admin123', 'true', 'admin')
